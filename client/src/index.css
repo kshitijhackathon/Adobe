@@ -84,11 +84,11 @@
   }
 }
 
-.animate-glow {
+.hover\:animate-glow:hover {
   animation: glow 2s ease-in-out infinite;
 }
 
-.animate-pulse-glow {
+.hover\:animate-pulse-glow:hover {
   animation: pulseGlow 1.5s ease-in-out infinite;
 }
 
@@ -104,33 +104,8 @@
   animation: fadeInScale 0.6s ease-out forwards;
 }
 
-.animate-card-glow {
+.hover\:animate-card-glow:hover {
   animation: cardGlow 3s ease-in-out infinite;
-}
-
-.animate-border-flow {
-  position: relative;
-  overflow: hidden;
-}
-
-.animate-border-flow::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, 
-    rgba(202, 106, 52, 0.8), 
-    rgba(202, 106, 52, 0.2), 
-    rgba(202, 106, 52, 0.8), 
-    rgba(202, 106, 52, 0.2),
-    rgba(202, 106, 52, 0.8)
-  );
-  background-size: 200% 200%;
-  animation: borderFlow 4s linear infinite;
-  border-radius: inherit;
-  z-index: -1;
 }
 
 .hover\:animate-border-flow:hover {

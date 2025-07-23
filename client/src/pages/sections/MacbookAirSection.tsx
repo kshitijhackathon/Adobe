@@ -59,7 +59,7 @@ export const MacbookAirSection = (): JSX.Element => {
             </Link>
             <Button 
               onClick={handleUploadClick}
-              className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f] animate-glow hover:animate-pulse-glow transition-all duration-300 hover:scale-105"
+              className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f] hover:animate-glow transition-all duration-300 hover:scale-105"
             >
               Upload
             </Button>
@@ -83,7 +83,7 @@ export const MacbookAirSection = (): JSX.Element => {
             <div className="flex flex-col items-center mb-12">
               <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6 animate-slide-in-up">
                 <span className="text-white animate-text-glow">PDF </span>
-                <span className="text-[#ca6a34] animate-pulse-glow">Document</span>
+                <span className="text-[#ca6a34]">Document</span>
                 <br />
                 <span className="text-white animate-text-glow">Analyzer</span>
               </h1>
@@ -121,7 +121,7 @@ export const MacbookAirSection = (): JSX.Element => {
 
             {/* Benefits badge */}
             <div className="flex justify-center mt-8 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
-              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 animate-glow hover:animate-pulse-glow transition-all duration-300 hover:scale-110">
+              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 hover:animate-glow transition-all duration-300 hover:scale-110">
                 <span className="bg-[linear-gradient(128deg,rgba(144,79,45,1)_22%,rgba(171,122,90,1)_100%)] [-webkit-background-clip:text] bg-clip-text text-transparent [font-family:'Inter',Helvetica] text-base">
                   BENEFITS
                 </span>
@@ -138,7 +138,7 @@ export const MacbookAirSection = (): JSX.Element => {
                 {insightCards.map((card, index) => (
                   <Card
                     key={index}
-                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border border-[#ca6a34]/20 relative animate-fade-in-scale hover:animate-border-flow hover:animate-hover-gradient transition-all duration-500 hover:scale-105 cursor-pointer"
+                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border border-[#ca6a34]/20 relative animate-fade-in-scale hover:animate-border-flow hover:animate-card-glow transition-all duration-500 hover:scale-105 cursor-pointer"
                     style={{ animationDelay: `${1 + index * 0.2}s` }}
                   >
                     <CardContent className="p-8">
