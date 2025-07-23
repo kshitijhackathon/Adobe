@@ -158,17 +158,7 @@ export const MacbookAirSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Background image */}
-        <img
-          className="absolute top-0 z-0 object-cover"
-          style={{
-            height: '784px',
-            marginLeft: '-3px',
-            width: '1526px'
-          }}
-          alt="Background"
-          src="/figmaAssets/background-image.jpg"
-        />
+        
       </div>
     </section>
   );
