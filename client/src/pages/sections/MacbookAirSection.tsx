@@ -133,7 +133,7 @@ export const MacbookAirSection = (): JSX.Element => {
                 {insightCards.map((card, index) => (
                   <Card
                     key={index}
-                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border-0 relative animate-fade-in-scale animate-card-glow animate-border-flow animate-hover-gradient transition-all duration-500 hover:scale-105 cursor-pointer"
+                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border border-[#ca6a34]/20 relative animate-fade-in-scale hover:animate-border-flow hover:animate-hover-gradient transition-all duration-500 hover:scale-105 cursor-pointer"
                     style={{ animationDelay: `${1 + index * 0.2}s` }}
                   >
                     <CardContent className="p-8">
