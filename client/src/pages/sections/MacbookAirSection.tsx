@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { PDFUpload } from "@/components/PDFUpload";
+import { PDFPreview } from "@/components/PDFPreview";
+import type { Document } from "@shared/schema";
 
 export const MacbookAirSection = (): JSX.Element => {
+  const [uploadedDocument, setUploadedDocument] = useState<Document | null>(null);
+  const [showUpload, setShowUpload] = useState(true);
+
+  const handleUploadComplete = (document: Document) => {
+    setUploadedDocument(document);
+    setShowUpload(false);
+  };
+
+  const handleUploadClick = () => {
+    setShowUpload(true);
+    setUploadedDocument(null);
+  };
+
   // Card data for the contextual insights section
   const insightCards = [
     {
@@ -37,7 +53,10 @@ export const MacbookAirSection = (): JSX.Element => {
             <Button variant="link" className="text-[#e6ecffb2] text-base">
               Know More
             </Button>
-            <Button className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f]">
+            <Button 
+              onClick={handleUploadClick}
+              className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f]"
+            >
               Upload
             </Button>
           </div>
@@ -75,25 +94,21 @@ export const MacbookAirSection = (): JSX.Element => {
               </div>
             </div>
 
-            {/* Main image */}
+            {/* PDF Upload/Preview Section */}
             <div className="relative w-full max-w-4xl mx-auto">
-              <img
-                className="w-full h-auto object-cover rounded-lg"
-                alt="PDF Document Analyzer Interface"
-                src="/figmaAssets/2151069420-1.png"
-              />
+              {showUpload || !uploadedDocument ? (
+                <PDFUpload onUploadComplete={handleUploadComplete} />
+              ) : (
+                <PDFPreview document={uploadedDocument} />
+              )}
 
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="[font-family:'Poppins',Helvetica] font-bold text-[#871714] text-[21px] [text-shadow:0px_2px_2px_#00000040] bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg">
-                  DRAG &amp; DROP THE PDF FILE
-                </p>
-              </div>
-
-              <img
-                className="absolute right-[-50px] top-[130px] w-[113px] h-[490px]"
-                alt="Smiley over the loading bar"
-                src="/figmaAssets/smiley-over-the-loading-bar.png"
-              />
+              {showUpload && (
+                <img
+                  className="absolute right-[-50px] top-[130px] w-[113px] h-[490px] z-0"
+                  alt="Smiley over the loading bar"
+                  src="/figmaAssets/smiley-over-the-loading-bar.png"
+                />
+              )}
             </div>
 
             {/* Benefits badge */}
