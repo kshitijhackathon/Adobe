@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PDFUpload } from "@/components/PDFUpload";
 import { PDFPreview } from "@/components/PDFPreview";
 import { SimpleUpload } from "@/components/SimpleUpload";
+import { Link } from "wouter";
 import type { Document } from "@shared/schema";
 
 export const MacbookAirSection = (): JSX.Element => {
@@ -51,7 +52,11 @@ export const MacbookAirSection = (): JSX.Element => {
         {/* Header navigation - moved higher up */}
         <div className="absolute top-6 right-8 z-10">
           <div className="flex items-center gap-4">
-            <Button variant="link" className="text-[#e6ecffb2] text-base animate-text-glow hover:text-[#ca6a34] transition-all duration-300">Contact Us</Button>
+            <Link href="/contact">
+              <Button variant="link" className="text-[#e6ecffb2] text-base animate-text-glow hover:text-[#ca6a34] transition-all duration-300">
+                Contact Us
+              </Button>
+            </Link>
             <Button 
               onClick={handleUploadClick}
               className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f] animate-glow hover:animate-pulse-glow transition-all duration-300 hover:scale-105"
