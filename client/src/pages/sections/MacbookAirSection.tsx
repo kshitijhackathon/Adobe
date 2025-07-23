@@ -81,12 +81,13 @@ export const MacbookAirSection = (): JSX.Element => {
           <div className="relative w-full max-w-7xl text-center">
             {/* Title section */}
             <div className="flex flex-col items-center mb-12">
-              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6 animate-slide-in-up">
-                <span className="text-white animate-text-glow">PDF </span>
-                <span className="text-[#ca6a34]">Document</span>
-                <br />
-                <span className="text-white animate-text-glow">Analyzer</span>
-              </h1>
+              <div className="mb-6 animate-slide-in-up">
+                <img
+                  className="mx-auto animate-text-glow"
+                  alt="Document Analyzer"
+                  src="/figmaAssets/document-analyzer-text.svg"
+                />
+              </div>
 
               <div className="space-y-1 mb-8 animate-fade-in-scale">
                 <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px] animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
