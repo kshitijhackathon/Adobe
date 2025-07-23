@@ -84,10 +84,6 @@
   }
 }
 
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
-
 .hover\:animate-glow:hover {
   animation: glow 2s ease-in-out infinite;
 }

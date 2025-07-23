@@ -81,13 +81,12 @@ export const MacbookAirSection = (): JSX.Element => {
           <div className="relative w-full max-w-7xl text-center">
             {/* Title section */}
             <div className="flex flex-col items-center mb-12">
-              <div className="mb-6 animate-slide-in-up">
-                <img
-                  className="mx-auto animate-text-glow"
-                  alt="Document Analyzer"
-                  src="/figmaAssets/document-analyzer-text.svg"
-                />
-              </div>
+              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6 animate-slide-in-up">
+                <span className="text-white animate-text-glow">PDF </span>
+                <span className="text-[#ca6a34]">Document</span>
+                <br />
+                <span className="text-white animate-text-glow">Analyzer</span>
+              </h1>
 
               <div className="space-y-1 mb-8 animate-fade-in-scale">
                 <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px] animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
@@ -122,7 +121,7 @@ export const MacbookAirSection = (): JSX.Element => {
 
             {/* Benefits badge */}
             <div className="flex justify-center mt-8 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
-              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 animate-glow transition-all duration-300 hover:scale-110">
+              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 hover:animate-glow transition-all duration-300 hover:scale-110">
                 <span className="bg-[linear-gradient(128deg,rgba(144,79,45,1)_22%,rgba(171,122,90,1)_100%)] [-webkit-background-clip:text] bg-clip-text text-transparent [font-family:'Inter',Helvetica] text-base">
                   BENEFITS
                 </span>
@@ -158,7 +157,12 @@ export const MacbookAirSection = (): JSX.Element => {
           </div>
         </div>
 
-        
+        {/* Background vector */}
+        <img
+          className="absolute w-full h-auto top-0 left-0 z-0"
+          alt="Vector"
+          src="/figmaAssets/vector.svg"
+        />
       </div>
     </section>
   );
