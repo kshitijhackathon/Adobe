@@ -121,8 +121,12 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
   }, [selectedFile, uploadMutation]);
 
   const openFileDialog = useCallback(() => {
-    console.log("Opening file dialog");
-    fileInputRef.current?.click();
+    console.log("Opening file dialog, fileInputRef:", fileInputRef.current);
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    } else {
+      console.error("File input ref is null");
+    }
   }, []);
 
   const formatFileSize = (bytes: number): string => {
@@ -138,9 +142,10 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
       <input
         ref={fileInputRef}
         type="file"
-        accept=".pdf"
+        accept=".pdf,application/pdf"
         onChange={handleFileSelect}
         className="hidden"
+        style={{ display: 'none' }}
       />
 
       {!selectedFile ? (
@@ -154,7 +159,11 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
-          onClick={openFileDialog}
+          onClick={(e) => {
+            e.preventDefault();
+            console.log("Card clicked - opening file dialog");
+            openFileDialog();
+          }}
         >
           <CardContent className="flex flex-col items-center justify-center py-16 px-8 text-center">
             <div className="mb-6">
@@ -172,9 +181,12 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
             <Button 
               className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] px-8 py-3"
               onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
+                console.log("Button clicked - opening file dialog");
                 openFileDialog();
               }}
+              type="button"
             >
               <Upload className="mr-2 h-4 w-4" />
               Choose PDF File
