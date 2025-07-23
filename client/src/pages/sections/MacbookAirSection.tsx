@@ -51,12 +51,12 @@ export const MacbookAirSection = (): JSX.Element => {
         {/* Header navigation - moved higher up */}
         <div className="absolute top-6 right-8 z-10">
           <div className="flex items-center gap-4">
-            <Button variant="link" className="text-[#e6ecffb2] text-base">
+            <Button variant="link" className="text-[#e6ecffb2] text-base animate-text-glow hover:text-[#ca6a34] transition-all duration-300">
               Know More
             </Button>
             <Button 
               onClick={handleUploadClick}
-              className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f]"
+              className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f] animate-glow hover:animate-pulse-glow transition-all duration-300 hover:scale-105"
             >
               Upload
             </Button>
@@ -64,9 +64,9 @@ export const MacbookAirSection = (): JSX.Element => {
         </div>
 
         {/* Logo - moved higher up */}
-        <div className="absolute top-8 left-8 z-10">
+        <div className="absolute top-8 left-8 z-10 animate-fade-in-scale">
           <img
-            className="w-[138px] h-[79px] object-cover"
+            className="w-[138px] h-[79px] object-cover hover:animate-glow transition-all duration-300 hover:scale-105"
             alt="Adobe Logo"
             src="/figmaAssets/image-removebg-preview-1.png"
           />
@@ -78,18 +78,18 @@ export const MacbookAirSection = (): JSX.Element => {
           <div className="relative w-full max-w-7xl text-center">
             {/* Title section */}
             <div className="flex flex-col items-center mb-12">
-              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6">
-                <span className="text-white">PDF </span>
-                <span className="text-[#ca6a34]">Document</span>
+              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6 animate-slide-in-up">
+                <span className="text-white animate-text-glow">PDF </span>
+                <span className="text-[#ca6a34] animate-pulse-glow">Document</span>
                 <br />
-                <span className="text-white">Analyzer</span>
+                <span className="text-white animate-text-glow">Analyzer</span>
               </h1>
 
-              <div className="space-y-1 mb-8">
-                <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px]">
+              <div className="space-y-1 mb-8 animate-fade-in-scale">
+                <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px] animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
                   Extract document structure using advanced AI/ML models
                 </p>
-                <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px]">
+                <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px] animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
                   Lightweight. CPU-Optimized Offline Processing
                 </p>
               </div>
@@ -117,8 +117,8 @@ export const MacbookAirSection = (): JSX.Element => {
             </div>
 
             {/* Benefits badge */}
-            <div className="flex justify-center mt-8">
-              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2">
+            <div className="flex justify-center mt-8 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
+              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 animate-glow hover:animate-pulse-glow transition-all duration-300 hover:scale-110">
                 <span className="bg-[linear-gradient(128deg,rgba(144,79,45,1)_22%,rgba(171,122,90,1)_100%)] [-webkit-background-clip:text] bg-clip-text text-transparent [font-family:'Inter',Helvetica] text-base">
                   BENEFITS
                 </span>
@@ -126,8 +126,8 @@ export const MacbookAirSection = (): JSX.Element => {
             </div>
 
             {/* Contextual Insights section */}
-            <div className="mt-16">
-              <h2 className="[font-family:'Inter',Helvetica] font-medium text-white text-[44px] text-center tracking-[-0.44px] leading-[52.8px] mb-12">
+            <div className="mt-16 animate-slide-in-up" style={{ animationDelay: '0.8s' }}>
+              <h2 className="[font-family:'Inter',Helvetica] font-medium text-white text-[44px] text-center tracking-[-0.44px] leading-[52.8px] mb-12 animate-text-glow">
                 Contextual Insights
               </h2>
 
@@ -135,10 +135,11 @@ export const MacbookAirSection = (): JSX.Element => {
                 {insightCards.map((card, index) => (
                   <Card
                     key={index}
-                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border-0 relative"
+                    className="rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_50%_8%,rgba(59,21,18,1)_0%,rgba(0,0,0,1)_100%)] border-0 relative animate-fade-in-scale hover:animate-glow transition-all duration-300 hover:scale-105 cursor-pointer"
+                    style={{ animationDelay: `${1 + index * 0.2}s` }}
                   >
                     <CardContent className="p-8">
-                      <h3 className="[font-family:'Inter',Helvetica] font-medium text-white text-2xl tracking-[-0.48px] leading-7 mb-6">
+                      <h3 className="[font-family:'Inter',Helvetica] font-medium text-white text-2xl tracking-[-0.48px] leading-7 mb-6 animate-text-glow">
                         {card.title}
                       </h3>
                       <p className="[font-family:'Inter',Helvetica] font-normal text-[#e6ecffb2] text-base tracking-[-0.32px] leading-[25.6px] whitespace-pre-line">
