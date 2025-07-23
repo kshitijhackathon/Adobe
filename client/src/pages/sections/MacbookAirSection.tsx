@@ -157,11 +157,11 @@ export const MacbookAirSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Background vector */}
+        {/* Background image */}
         <img
-          className="absolute w-full h-auto top-0 left-0 z-0"
-          alt="Vector"
-          src="/figmaAssets/background-vector.svg"
+          className="absolute w-full h-full top-0 left-0 z-0 object-cover"
+          alt="Background"
+          src="/figmaAssets/background-image.jpg"
         />
       </div>
     </section>
