@@ -5,8 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PDFUpload } from "@/components/PDFUpload";
 import { PDFPreview } from "@/components/PDFPreview";
 import { SimpleUpload } from "@/components/SimpleUpload";
-import { Logo } from "@/components/Logo";
-import { BackgroundVector } from "@/components/BackgroundVector";
 import type { Document } from "@shared/schema";
 
 export const MacbookAirSection = (): JSX.Element => {
@@ -49,7 +47,7 @@ export const MacbookAirSection = (): JSX.Element => {
 
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden">
-      <div className="relative w-full min-h-screen bg-black">
+      <div className="relative w-full min-h-screen" style={{background: 'radial-gradient(50% 50% at 50% 8%, rgba(79, 26, 23, 1) 49%, rgba(0, 0, 0, 1) 53%)'}}>
         {/* Header navigation - moved higher up */}
         <div className="absolute top-6 right-8 z-10">
           <div className="flex items-center gap-4">
@@ -67,10 +65,10 @@ export const MacbookAirSection = (): JSX.Element => {
 
         {/* Logo - moved higher up */}
         <div className="absolute top-8 left-8 z-10 animate-fade-in-scale">
-          <Logo 
-            className="hover:animate-glow transition-all duration-300 hover:scale-105 cursor-pointer"
-            width={138}
-            height={79}
+          <img
+            className="w-[138px] h-[79px] object-cover hover:animate-glow transition-all duration-300 hover:scale-105"
+            alt="Adobe Logo"
+            src="/figmaAssets/image-removebg-preview-1.png"
           />
         </div>
 
@@ -157,7 +155,11 @@ export const MacbookAirSection = (): JSX.Element => {
         </div>
 
         {/* Background vector */}
-        <BackgroundVector className="absolute w-full h-full top-0 left-0 z-0" />
+        <img
+          className="absolute w-full h-auto top-0 left-0 z-0"
+          alt="Vector"
+          src="/figmaAssets/vector.svg"
+        />
       </div>
     </section>
   );
