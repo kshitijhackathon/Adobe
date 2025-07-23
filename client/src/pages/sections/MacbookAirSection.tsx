@@ -46,7 +46,7 @@ export const MacbookAirSection = (): JSX.Element => {
 
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden">
-      <div className="relative w-full min-h-screen [background:radial-gradient(50%_50%_at_50%_8%,rgba(48,16,15,1)_49%,rgba(0,0,0,1)_53%)]">
+      <div className="relative w-full min-h-screen" style={{background: 'radial-gradient(50% 50% at 50% 8%, rgba(79, 26, 23, 1) 49%, rgba(0, 0, 0, 1) 53%)'}}>
         {/* Header navigation - moved higher up */}
         <div className="absolute top-6 right-8 z-10">
           <div className="flex items-center gap-4">
@@ -71,7 +71,7 @@ export const MacbookAirSection = (): JSX.Element => {
           />
         </div>
 
-        <div className="flex flex-col w-full items-center justify-center min-h-screen px-4">
+        <div className="flex flex-col w-full items-center justify-center min-h-screen px-4 pt-[120px]">
 
           {/* Main content */}
           <div className="relative w-full max-w-7xl text-center">

@@ -79,9 +79,12 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
 
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
+      console.log("File dropped:", file.name, file.type);
       if (file.type === "application/pdf") {
         setSelectedFile(file);
+        console.log("PDF file selected:", file.name);
       } else {
+        console.log("Invalid file type:", file.type);
         toast({
           title: "Invalid File Type",
           description: "Please select a PDF file.",
@@ -92,11 +95,15 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
   }, [toast]);
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("File input changed");
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      console.log("File selected:", file.name, file.type);
       if (file.type === "application/pdf") {
         setSelectedFile(file);
+        console.log("PDF file selected:", file.name);
       } else {
+        console.log("Invalid file type:", file.type);
         toast({
           title: "Invalid File Type",
           description: "Please select a PDF file.",
@@ -114,6 +121,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
   }, [selectedFile, uploadMutation]);
 
   const openFileDialog = useCallback(() => {
+    console.log("Opening file dialog");
     fileInputRef.current?.click();
   }, []);
 
