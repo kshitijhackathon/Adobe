@@ -159,8 +159,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
-          onClick={(e) => {
-            e.preventDefault();
+          onClick={() => {
             console.log("Card clicked - opening file dialog");
             openFileDialog();
           }}
@@ -180,9 +179,7 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onUploadComplete }) => {
             
             <Button 
               className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] px-8 py-3"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
+              onClick={() => {
                 console.log("Button clicked - opening file dialog");
                 openFileDialog();
               }}

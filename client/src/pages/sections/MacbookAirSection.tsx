@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PDFUpload } from "@/components/PDFUpload";
 import { PDFPreview } from "@/components/PDFPreview";
+import { SimpleUpload } from "@/components/SimpleUpload";
 import type { Document } from "@shared/schema";
 
 export const MacbookAirSection = (): JSX.Element => {
@@ -97,17 +98,21 @@ export const MacbookAirSection = (): JSX.Element => {
             {/* PDF Upload/Preview Section */}
             <div className="relative w-full max-w-4xl mx-auto">
               {showUpload || !uploadedDocument ? (
-                <PDFUpload onUploadComplete={handleUploadComplete} />
+                <SimpleUpload onFileSelect={(file) => {
+                  console.log("File selected:", file.name);
+                  // Mock upload for now - create a document object
+                  const mockDocument = {
+                    id: Date.now(),
+                    filename: file.name,
+                    fileSize: file.size,
+                    uploadedAt: new Date(),
+                    analyzed: false,
+                    analysisResult: null
+                  };
+                  handleUploadComplete(mockDocument);
+                }} />
               ) : (
                 <PDFPreview document={uploadedDocument} />
-              )}
-
-              {showUpload && (
-                <img
-                  className="absolute right-[-50px] top-[130px] w-[113px] h-[490px] z-0"
-                  alt="Smiley over the loading bar"
-                  src="/figmaAssets/smiley-over-the-loading-bar.png"
-                />
               )}
             </div>
 
