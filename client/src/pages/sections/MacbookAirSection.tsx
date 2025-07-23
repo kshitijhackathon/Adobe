@@ -121,7 +121,7 @@ export const MacbookAirSection = (): JSX.Element => {
 
             {/* Benefits badge */}
             <div className="flex justify-center mt-8 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
-              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 hover:animate-glow transition-all duration-300 hover:scale-110">
+              <Badge className="bg-black backdrop-blur-[34px] rounded-[26px] px-4 py-2 animate-glow transition-all duration-300 hover:scale-110">
                 <span className="bg-[linear-gradient(128deg,rgba(144,79,45,1)_22%,rgba(171,122,90,1)_100%)] [-webkit-background-clip:text] bg-clip-text text-transparent [font-family:'Inter',Helvetica] text-base">
                   BENEFITS
                 </span>
