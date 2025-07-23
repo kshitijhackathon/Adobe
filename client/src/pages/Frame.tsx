@@ -4,13 +4,9 @@ import { TextGraphicSection } from "./sections/TextGraphicSection";
 
 export const Frame = (): JSX.Element => {
   return (
-    <div className="bg-transparent flex flex-row justify-center w-full">
-      <div className="w-full max-w-[1280px]">
-        <div className="flex flex-col w-full">
-          <MacbookAirSection />
-          <TextGraphicSection />
-        </div>
-      </div>
+    <div className="bg-black flex flex-col w-full min-h-screen">
+      <MacbookAirSection />
+      <TextGraphicSection />
     </div>
   );
 };

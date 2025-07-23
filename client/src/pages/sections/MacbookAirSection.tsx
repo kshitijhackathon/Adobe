@@ -29,47 +29,45 @@ export const MacbookAirSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative w-full bg-black overflow-hidden">
-      <div className="relative w-full">
-        {/* Background gradients */}
-        <div className="relative w-full [background:radial-gradient(50%_50%_at_50%_0%,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_75%)] opacity-[0.59]" />
-
-        <div className="flex flex-col w-full items-center gap-[41px] py-[180px] [background:radial-gradient(50%_50%_at_50%_8%,rgba(48,16,15,1)_49%,rgba(0,0,0,1)_53%)]">
-          {/* Header navigation */}
-          <div className="flex justify-end w-full max-w-7xl px-4">
-            <div className="flex items-center gap-4">
-              <Button variant="link" className="text-[#e6ecffb2] text-base">
-                Know More
-              </Button>
-              <Button className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f]">
-                Upload
-              </Button>
-            </div>
+    <section className="relative w-full min-h-screen bg-black overflow-hidden">
+      <div className="relative w-full min-h-screen [background:radial-gradient(50%_50%_at_50%_8%,rgba(48,16,15,1)_49%,rgba(0,0,0,1)_53%)]">
+        {/* Header navigation - moved higher up */}
+        <div className="absolute top-6 right-8 z-10">
+          <div className="flex items-center gap-4">
+            <Button variant="link" className="text-[#e6ecffb2] text-base">
+              Know More
+            </Button>
+            <Button className="bg-[#531f17] text-white hover:bg-[#3f1711] rounded-[10px] shadow-[0px_0px_0px_1px_#0055ff1f]">
+              Upload
+            </Button>
           </div>
+        </div>
 
-          {/* Logo */}
-          <div className="absolute top-[125px] left-8">
-            <img
-              className="w-[138px] h-[79px] object-cover"
-              alt="Logo"
-              src="/figmaAssets/image-removebg-preview-1.png"
-            />
-          </div>
+        {/* Logo - moved higher up */}
+        <div className="absolute top-8 left-8 z-10">
+          <img
+            className="w-[138px] h-[79px] object-cover"
+            alt="Adobe Logo"
+            src="/figmaAssets/image-removebg-preview-1.png"
+          />
+        </div>
+
+        <div className="flex flex-col w-full items-center justify-center min-h-screen px-4">
 
           {/* Main content */}
-          <div className="relative w-full max-w-7xl">
+          <div className="relative w-full max-w-7xl text-center">
             {/* Title section */}
-            <div className="flex flex-col items-center text-center mb-16">
-              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold">
+            <div className="flex flex-col items-center mb-12">
+              <h1 className="[font-family:'MuseoModerno',Helvetica] text-[84px] leading-[70.4px] font-semibold mb-6">
                 <span className="text-white">PDF </span>
                 <span className="text-[#ca6a34]">Document</span>
                 <br />
                 <span className="text-white">Analyzer</span>
               </h1>
 
-              <div className="mt-6 space-y-1">
+              <div className="space-y-1 mb-8">
                 <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px]">
-                  Extract document structure using advanced Al/ML models
+                  Extract document structure using advanced AI/ML models
                 </p>
                 <p className="[font-family:'Poppins',Helvetica] font-medium text-white text-[21px]">
                   Lightweight. CPU-Optimized Offline Processing
@@ -78,21 +76,21 @@ export const MacbookAirSection = (): JSX.Element => {
             </div>
 
             {/* Main image */}
-            <div className="relative w-full">
+            <div className="relative w-full max-w-4xl mx-auto">
               <img
-                className="w-full h-auto object-cover"
-                alt="PDF Document Analyzer"
+                className="w-full h-auto object-cover rounded-lg"
+                alt="PDF Document Analyzer Interface"
                 src="/figmaAssets/2151069420-1.png"
               />
 
-              <div className="absolute bottom-0 left-0 right-0 text-center">
-                <p className="[font-family:'Poppins',Helvetica] font-bold text-[#871714] text-[21px] [text-shadow:0px_2px_2px_#00000040]">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="[font-family:'Poppins',Helvetica] font-bold text-[#871714] text-[21px] [text-shadow:0px_2px_2px_#00000040] bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg">
                   DRAG &amp; DROP THE PDF FILE
                 </p>
               </div>
 
               <img
-                className="absolute right-0 top-[130px] w-[113px] h-[490px]"
+                className="absolute right-[-50px] top-[130px] w-[113px] h-[490px]"
                 alt="Smiley over the loading bar"
                 src="/figmaAssets/smiley-over-the-loading-bar.png"
               />
